@@ -326,8 +326,19 @@
 </div>
 
 <div class="content" role="main">
-  <app-home></app-home>
+  <h1>Angular Router App</h1>
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+<nav>
+  <ul>
+    <li><a routerLink="/About" routerLinkActive="active" ariaCurrentWhenActive="page">About</a></li>
+    <li><a routerLink="/Home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
 </div>
+
+<!-- The routed views render in the <router-outlet>-->
+
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
@@ -337,4 +348,4 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<router-outlet></router-outlet>
+
