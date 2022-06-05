@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../Services/common.service';
 
 @Component({
   selector: 'app-first-component',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./first-component.component.scss']
 })
 export class FirstComponent implements OnInit {
-
-  constructor() { }
+  public counter:number = 0;
+  public counterBinhPhuong = 0;
+  constructor(private common:CommonService) { }
 
   ngOnInit(): void {
+    this.counter = this.common.counter;
+    this.counterBinhPhuong = this.common.LuyThua(this.counter);
+    this.common.counter++;
   }
 
 }
